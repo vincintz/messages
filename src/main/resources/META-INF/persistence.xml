@@ -4,12 +4,17 @@
              xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
              xsi:schemaLocation="http://java.sun.com/xml/ns/persistence http://java.sun.com/xml/ns/persistence/persistence_2_0.xsd"
              version="2.0">
-    <persistence-unit name="MessagesPersistenceUnit">
+    <persistence-unit name="primary">
+        <provider>org.hibernate.ejb.HibernatePersistence</provider>
         <jta-data-source>messagesMySql</jta-data-source>
         <class>com.messages.Message</class>
         <properties>
-            <property name="openjpa.jdbc.SynchronizeMappings"
-                    value="buildSchema(ForeignKeys=true)"/>
+            <!-- OpenJPA properties -->
+            <!-- property name="openjpa.jdbc.SynchronizeMappings"
+                    value="buildSchema(ForeignKeys=true)"/ -->
+            <!-- Hibernate Properties -->
+            <property name="hibernate.hbm2ddl.auto" value="create-drop" />
+            <property name="hibernate.show_sql" value="false" />
         </properties>
     </persistence-unit>
 </persistence>

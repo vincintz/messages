@@ -9,7 +9,7 @@ import javax.persistence.Query;
 
 @Stateless
 public class MessageService {
-    @PersistenceContext (unitName="MessagesPersistenceUnit")
+    @PersistenceContext (unitName="primary")
     private EntityManager em;
 
     @SuppressWarnings("unchecked")
@@ -17,7 +17,7 @@ public class MessageService {
         final Query query = em.createQuery("SELECT m FROM Message m ORDER BY m.timeStamp DESC");
         return query.getResultList();
     }
-    
+
     public void saveMessage(final Message message) {
         em.persist(message);
     }
