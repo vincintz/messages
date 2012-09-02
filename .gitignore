@@ -1,0 +1,10 @@
+# Build output directory
+target
+
+# Eclipse files
+.classpath
+.project
+.settings
+
+# Git files
+# .gitignore
