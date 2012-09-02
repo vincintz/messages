@@ -6,6 +6,13 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 
+/**
+ * <p>
+ * Message domain class.
+ * </p>
+ * 
+ * @author theo.reyes
+ */
 @Entity
 public class Message {
     @Id @GeneratedValue

@@ -15,22 +15,22 @@
     From :
     <h:inputText
             id="messageSender"
-            value="#{messageSender}"
+            value="#{messageManager.message.sender}"
             /><br/>
     <h:inputTextarea
             id="messageText"
-            value="#{messageText}"
+            value="#{messageManager.message.text}"
             cols="35" rows="3"
             /><br/>
     <h:commandButton
             id="submitMessage"
             value="Post"
-            action="messages.htm"
+            action="#{messageManager.post}"
             />
 </h:form>
 <hr/>
-<div class="messageHeader">${messageSender}</div>
-<p class="messageText">${messageText}</p>
+<div class="messageHeader">${messageManager.message.sender}</div>
+<p class="messageText">${messageManager.message.text}</p>
 
 </h:body>
 
