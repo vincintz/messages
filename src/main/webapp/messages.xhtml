@@ -29,8 +29,11 @@
             />
 </h:form>
 <hr/>
-<div class="messageHeader">${messageManager.message.sender}</div>
-<p class="messageText">${messageManager.message.text}</p>
+<ui:repeat var="message" value="#{messageManager.list}" varStatus="s">
+    <div class="messageHeader">${message.sender} (${message.timeStamp})</div>
+    <p class="messageText">${message.text}</p>
+    <hr/>
+</ui:repeat>
 
 </h:body>
 
