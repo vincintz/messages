@@ -6,7 +6,7 @@
              version="2.0">
     <persistence-unit name="primary">
         <provider>org.hibernate.ejb.HibernatePersistence</provider>
-        <jta-data-source>messagesMySql</jta-data-source>
+        <jta-data-source>MysqlDS</jta-data-source>
         <class>com.messages.Message</class>
         <properties>
             <!-- OpenJPA properties -->
