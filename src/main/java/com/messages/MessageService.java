@@ -7,11 +7,23 @@ import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 import javax.persistence.Query;
 
+/**
+ * <p>
+ * Encapsulates services available for messages.
+ * </p>
+ * @author theo
+ */
 @Stateless
 public class MessageService {
     @PersistenceContext (unitName="primary")
     private EntityManager em;
 
+    /**
+     * @return
+     * <p>
+     * Message list.
+     * </p>
+     */
     @SuppressWarnings("unchecked")
     public List<Message> loadMessageList() {
         final Query query = em.createQuery("SELECT m FROM Message m ORDER BY m.timeStamp DESC");
